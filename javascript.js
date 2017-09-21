@@ -57,7 +57,7 @@ function checkWin(){
 
 function resetGame(){
 	newRound();
-	document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman/assets2/images/" + compWordChoice + ".jpg";
+	document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman2/assets/images/" + compWordChoice + ".jpg";
 }
 
 function logLetters(){
