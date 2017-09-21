@@ -46,18 +46,18 @@ function replaceLetters(){
 function checkWin(){
 	if(numLettersCorrect === compWordChoice.length){
 		numWins++;
-		document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman/assets/images/" + compWordChoice + "rev.jpg";
+		document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman2/assets/images/" + compWordChoice + "rev.jpg";
 	}
 	else if(numRemainingGuesses === 0){
 		numLosses++;
-		document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman/assets/images/" + compWordChoice + "rev.jpg";
+		document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman2/assets/images/" + compWordChoice + "rev.jpg";
 		newRound();
 	}	
 }
 
 function resetGame(){
 	newRound();
-	document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman/assets/images/" + compWordChoice + ".jpg";
+	document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman/assets2/images/" + compWordChoice + ".jpg";
 }
 
 function logLetters(){
@@ -93,7 +93,7 @@ function newRound(){
 
 drawBlanks()
 console.log(compWordChoice)
-document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman/assets/images/" + compWordChoice + ".jpg";
+document.getElementById('close-up-image').src = "https://nicholasvree.github.io/hangman2/assets/images/" + compWordChoice + ".jpg";
 
 
 	document.onkeyup = function(event){
