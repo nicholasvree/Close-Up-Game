@@ -1,0 +1,122 @@
+//////variables//////
+
+var numLosses=0;
+var numWins=0;
+var numRemainingGuesses = 10;
+var wordList = ["RED", "BLUE", "GREEN", "YELLOW", "ORANGE"];
+var letterChoice;
+var lettersGuessed = "";
+var lettersMatched;
+var lettersMatchedNoSp
+var compWordChoice = wordList[Math.floor(Math.random() * wordList.length)];
+var numLettersCorrect=0;
+
+var printLettersMatched = document.getElementById("letters-matched");
+var printNumWins = document.getElementById("num-wins")
+var printLetterChoice = document.getElementById("letter-choice");
+var printNumRemainingGuesses = document.getElementById("num-remaining-guesses")
+var printLettersGuessed = document.getElementById("letters-guessed")
+var printNumLosses = document.getElementById("num-losses")
+
+//////functions//////
+
+function drawBlanks(){	
+ 	lettersMatched="_";
+ 	for(i=1; i<compWordChoice.length; i++){
+ 	lettersMatched = lettersMatched + " _"
+	}
+ 	printLettersMatched.textContent = lettersMatched
+ 	return lettersMatched
+}
+
+
+
+
+
+function replaceLetters(){ 
+ 		for(i=0; i<compWordChoice.length; i++){
+ 		 	if(compWordChoice[i]===letterChoice){
+ 		 		lettersMatched=lettersMatched.substr(0,i)+(letterChoice)+lettersMatched.substr(i+1);
+ 		 		numLettersCorrect = numLettersCorrect+1;
+ 		 		// console.log(i)
+ 		 		// console.log(letterChoice)
+ 		 		// console.log(compWordChoice[i])
+ 		 		// console.log(lettersMatched[i])
+ 		 		// console.log(lettersMatched)
+ 		 	}
+
+
+ 		 }
+	}
+
+function checkWin(){
+
+	if(numLettersCorrect === compWordChoice.length){
+		numWins++;
+		newRound();
+		
+	}
+	else if(numRemainingGuesses === 0){
+		numLosses++;
+		newRound();
+	
+	}	
+		// console.log("________________")
+		// console.log(numLettersCorrect)
+		// console.log(compWordChoice.length)
+		// console.log(numWins)
+		// console.log("________________")
+	console.log(numRemainingGuesses);
+}
+
+function checkGuesses(){
+
+
+}
+
+function logLetters(){
+	 		 if(lettersGuessed.indexOf(letterChoice)===-1){
+ 		 		lettersGuessed = lettersGuessed + ", "+letterChoice
+ 		 		
+ 		 	}
+ 		 	// if(lettersGuessed.trim === ","){
+ 		 	// 	lettersGuessed = ""
+ 		 	// }
+ 		 	console.log(lettersGuessed)
+}
+
+function newRound(){
+	numRemainingGuesses = 10;
+	letterChoice = "";
+    lettersGuessed = "";
+    lettersMatched = drawBlanks()
+	compWordChoice = wordList[Math.floor(Math.random() * wordList.length)];
+	numLettersCorrect=0;
+	console.log(compWordChoice)
+}
+
+
+
+// //////main////////
+
+drawBlanks()
+console.log(compWordChoice)
+
+document.onkeyup = function(event){
+	letterChoice = event.key;
+	letterChoice = letterChoice.toUpperCase();
+	if(letterChoice.length === 1 && letterChoice.match(/[a-z]/i)){
+		numRemainingGuesses--
+		printNumRemainingGuesses.textContent = numRemainingGuesses;
+		printLettersGuessed.textContent = lettersGuessed;
+		printLetterChoice.textContent=letterChoice;
+		replaceLetters()
+		printLettersMatched.textContent = lettersMatched
+		checkWin()
+		printNumWins.textContent = numWins
+		printNumLosses.textContent = numLosses
+		logLetters()
+	}
+}
+
+

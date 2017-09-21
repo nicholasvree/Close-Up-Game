@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Close Up Guess Game</title>
+
+	<!-- Bootstrap CDN -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+	<link rel="stylesheet" href="assets/css/style.css" >
+
+</head>
+<body>
+	<div class="container">
+		<div class="jumbotron text-center">
+			<h1>The Close Up Guessing Game</h1>
+		</div>
+		<div class="row">
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class ="panel-title text-center">Wins</h3>
+					</div>
+					<div class="panel-body">
+						<h3 class="text-center"><span id="num-wins"></span></h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class ="panel-title text-center">Losses</h3>
+					</div>
+					<div class="panel-body">
+						<h3 class="text-center"><span id="num-losses"></span></h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class ="panel-title text-center">Remaining Guesses</h3>
+					</div>
+					<div class="panel-body">
+						<h3 class="text-center"><span id="num-remaining-guesses"></span></h3>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h3 class ="panel-title text-center">Letter Choice</h3>
+					</div>
+					<div class="panel-body">
+						<h3 class="text-center"><span id="letter-choice"></span></h3>
+					</div>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<img class = "center-block" id="close-up-image" src=>
+				</div>
+				<div class="col-md-6">
+					<button type="button" class="btn btn-info" id="reset-button" onClick="resetGame()">Try Another One</button>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class ="panel-title text-center">Letter Choice</h3>
+						</div>
+						<div class="panel-body">
+							<h3 class="text-center"><span id="letters-matched"></span></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class ="panel-title text-center">Letters Guessed</h3>
+						</div>
+						<div class="panel-body">
+							<h3 class="text-center"><span id="letters-guessed"></span></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="javascript.js"></script>
+	</body>
+	</html>
